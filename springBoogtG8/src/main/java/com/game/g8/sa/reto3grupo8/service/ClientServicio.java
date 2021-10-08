@@ -25,7 +25,7 @@ public class ClientServicio {
     /**R
      * mostrar todos los productos
      */
-    public List<Client> getProductoAll(){
+    public List<Client> getClientAll(){
         return repository.findAll();
     }
     
@@ -48,7 +48,4 @@ public class ClientServicio {
         return "Producto removido" +id;
     }
 
-    public List<Client> getClientAll() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }
