@@ -25,7 +25,7 @@ public class MessageService {
     /**R
      * mostrar todos los productos
      */
-    public List<Message> getProductoAll(){
+    public List<Message> getMessageAll(){
         return repository.findAll();
     }
     

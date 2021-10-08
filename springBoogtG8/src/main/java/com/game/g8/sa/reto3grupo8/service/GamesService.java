@@ -25,7 +25,7 @@ public class GamesService {
     /**R
      * mostrar todos los productos
      */
-    public List<Games> getProductoAll(){
+    public List<Games> getGamesAll(){
         return repository.findAll();
     }
     
