@@ -47,4 +47,8 @@ public class ClientServicio {
         repository.deleteById(id);
         return "Producto removido" +id;
     }
+
+    public List<Client> getClientAll() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
