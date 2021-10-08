@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  *
@@ -30,7 +32,7 @@ public class GamesController {
     public ResponseEntity addGames(@RequestBody Games games){
         service.saveGames(games);
         return ResponseEntity.status(201).build();
-    }
+    } 
     
     @PutMapping("/update")
     public ResponseEntity updateGames(@RequestBody Games games){

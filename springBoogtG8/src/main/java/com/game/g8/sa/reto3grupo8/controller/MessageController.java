@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Grupo08
  */
 @RestController
-@RequestMapping("/api/client/")
+@RequestMapping("/api/message/")
 public class MessageController {
     @Autowired
     private MessageService service;
