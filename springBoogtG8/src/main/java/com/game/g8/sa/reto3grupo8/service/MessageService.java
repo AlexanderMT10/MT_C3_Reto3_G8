@@ -33,7 +33,7 @@ public class MessageService {
      * Actualizar message por ID
      */
     public Message updateMessage(Message message){
-        Message existeMessage = repository.findById(message.getId()).orElse(null);
+        Message existeMessage = repository.findById(message.getIdMessage()).orElse(null);
         existeMessage.setMessagetext(message.getMessagetext());
         return repository.save(existeMessage);
     }
@@ -41,9 +41,9 @@ public class MessageService {
     /**c
      * Eliminar mensaje por ID
      */
-    public String deleteMessage(int id){
-        repository.deleteById(id);
-        return "Producto removido" +id;
+    public String deleteMessage(int idMessage){
+        repository.deleteById(idMessage);
+        return "Producto removido" +idMessage;
     }
     
 }

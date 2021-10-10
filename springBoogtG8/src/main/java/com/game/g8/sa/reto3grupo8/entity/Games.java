@@ -22,8 +22,8 @@ public class Games {
     @GeneratedValue 
     private int id;
     private String developer;
-    private int minage;
-    private int category_id;
+    private int years;
     private String name;
+    private String description;
     
 }

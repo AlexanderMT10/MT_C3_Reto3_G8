@@ -35,9 +35,9 @@ public class GamesService {
     public Games updateGames(Games games){
         Games existeGames = repository.findById(games.getId()).orElse(null);
         existeGames.setDeveloper(games.getDeveloper());
-        existeGames.setMinage(games.getMinage());
-        existeGames.setCategory_id(games.getCategory_id());
+        existeGames.setYears(games.getYears());
         existeGames.setName(games.getName());
+        existeGames.setDescription(games.getDescription());
         return repository.save(existeGames);
     }
     

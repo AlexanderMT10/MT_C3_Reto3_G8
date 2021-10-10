@@ -22,9 +22,9 @@ import lombok.NoArgsConstructor;
 public class Client {
     @Id //clave primaria de la tabla Client
     @GeneratedValue //Que la id va ser autoIncremental
-    private int id;
+    private int idClient;
     private String name;
     private String email;
-    private int age;
+    private String password;
       
 }

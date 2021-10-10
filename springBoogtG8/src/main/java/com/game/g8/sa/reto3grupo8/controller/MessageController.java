@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Grupo08
  */
 @RestController
-@RequestMapping("/api/message/")
+@RequestMapping("/api/Message/")
 public class MessageController {
     @Autowired
     private MessageService service;
@@ -42,7 +42,7 @@ public class MessageController {
     
     @DeleteMapping("/dalete")
     public ResponseEntity deleteMessage(@RequestBody Message message){
-        service.deleteMessage(message.getId());
+        service.deleteMessage(message.getIdMessage());
         return ResponseEntity.status(201).build();
     }
     

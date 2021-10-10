@@ -21,7 +21,7 @@ import lombok.NoArgsConstructor;
 public class Message {
     @Id 
     @GeneratedValue 
-    private int id;
+    private int idMessage;
     private String messagetext;
 
 }

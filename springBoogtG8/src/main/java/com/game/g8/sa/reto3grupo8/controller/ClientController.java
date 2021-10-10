@@ -15,10 +15,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  *
- * @author JhonA
+ * @author Grupo08
  */
 @RestController
-@RequestMapping("/api/client/")
+@RequestMapping("/api/Client/")
 public class ClientController {
     
     @Autowired
@@ -43,7 +43,7 @@ public class ClientController {
     
     @DeleteMapping("/dalete")
     public ResponseEntity deleteClient(@RequestBody Client client){
-        service.deleteClient(client.getId());
+        service.deleteClient(client.getIdClient());
         return ResponseEntity.status(201).build();
     }
 }

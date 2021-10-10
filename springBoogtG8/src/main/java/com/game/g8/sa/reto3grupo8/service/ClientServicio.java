@@ -33,19 +33,19 @@ public class ClientServicio {
      * Actualizar client por ID
      */
     public Client updateClient(Client client){
-        Client existeClient = repository.findById(client.getId()).orElse(null);
+        Client existeClient = repository.findById(client.getIdClient()).orElse(null);
         existeClient.setName(client.getName());
         existeClient.setEmail(client.getEmail());
-        existeClient.setAge(client.getAge());
+        existeClient.setPassword(client.getPassword());
         return repository.save(existeClient);
     }
     
     /**c
      * Eliminar producto por ID
      */
-    public String deleteClient(int id){
-        repository.deleteById(id);
-        return "Producto removido" +id;
+    public String deleteClient(int idClient){
+        repository.deleteById(idClient);
+        return "Producto removido" +idClient;
     }
 
 }
