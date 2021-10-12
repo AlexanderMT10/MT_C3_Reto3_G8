@@ -23,4 +23,5 @@ public class Reservation {
     private int idReservation;
     private String startDate;
     private String devolutionDate;
+    private String status;
 }
