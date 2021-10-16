@@ -1,7 +1,7 @@
 package com.game.g8.sa.reto3grupo8.controller;
 
-import com.game.g8.sa.reto3grupo8.entity.Games;
-import com.game.g8.sa.reto3grupo8.service.GamesService;
+import com.game.g8.sa.reto3grupo8.entity.Game;
+import com.game.g8.sa.reto3grupo8.service.GameService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -19,30 +19,30 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/api/Game/")
-public class GamesController {
+public class GameController {
     @Autowired
-    private GamesService service;
+    private GameService service;
     
-    @GetMapping("/all")
-    public List<Games> findAllGames(){
-        return service.getGamesAll();
+    @GetMapping("all")
+    public List<Game> findAllGame(){
+        return service.getGameAll();
     }
     
-    @PostMapping("/save")
-    public ResponseEntity addGames(@RequestBody Games games){
-        service.saveGames(games);
+    @PostMapping("save")
+    public ResponseEntity addGame(@RequestBody Game game){
+        service.saveGame(game);
         return ResponseEntity.status(201).build();
     } 
     
-    @PutMapping("/update")
-    public ResponseEntity updateGames(@RequestBody Games games){
-        service.updateGames(games);
+    @PutMapping("update")
+    public ResponseEntity updateGame(@RequestBody Game game){
+        service.updateGame(game);
         return ResponseEntity.status(201).build();
     }
     
-    @DeleteMapping("/dalete")
-    public ResponseEntity deleteGames(@RequestBody Games games){
-        service.deleteGames(games.getId());
+    @DeleteMapping("delete")
+    public ResponseEntity deleteGame(@RequestBody Game game){
+        service.deleteGame(game.getId());
         return ResponseEntity.status(201).build();
     }
 }

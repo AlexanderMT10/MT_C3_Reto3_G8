@@ -16,14 +16,14 @@ public class ClientServicio {
     private ClientRepository repository;
     
     /**C
-     * Guardar producto
+     * Guardar cleinte
      */
     public Client saveClient(Client client){
         return repository.save(client);
     }
     
     /**R
-     * mostrar todos los productos
+     * mostrar todos los cleintes
      */
     public List<Client> getClientAll(){
         return repository.findAll();
@@ -37,11 +37,12 @@ public class ClientServicio {
         existeClient.setName(client.getName());
         existeClient.setEmail(client.getEmail());
         existeClient.setPassword(client.getPassword());
+        existeClient.setAge(client.getAge());
         return repository.save(existeClient);
     }
     
     /**c
-     * Eliminar producto por ID
+     * Eliminar cliente por ID
      */
     public String deleteClient(int idClient){
         repository.deleteById(idClient);

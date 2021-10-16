@@ -1,7 +1,7 @@
 package com.game.g8.sa.reto3grupo8.controller;
 
-import com.game.g8.sa.reto3grupo8.entity.Reservation;
-import com.game.g8.sa.reto3grupo8.service.ReservationService;
+import com.game.g8.sa.reto3grupo8.entity.Score;
+import com.game.g8.sa.reto3grupo8.service.ScoreService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -18,32 +18,32 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Grupo08
  */
 @RestController
-@RequestMapping("/api/Reservation/")
-public class ReservationController {
-    
+@RequestMapping("/api/Calification/")
+public class ScoreController {
     @Autowired
-    private ReservationService service;
-    
+    private ScoreService service;
+
     @GetMapping("all")
-    public List<Reservation> findAllReservation(){
-        return service.getReservationAll();
+    public List<Score> findAllScore() {
+        return service.getScoreAll();
     }
-    
+
     @PostMapping("save")
-    public ResponseEntity addReservation(@RequestBody Reservation reservation){
-        service.saveReservation(reservation);
+    public ResponseEntity addScore(@RequestBody Score score) {
+        service.saveScore(score);
         return ResponseEntity.status(201).build();
     }
-    
+
     @PutMapping("update")
-    public ResponseEntity updateReservation(@RequestBody Reservation reservation){
-        service.updateReservation(reservation);
+    public ResponseEntity updateScore(@RequestBody Score score) {
+        service.updateScore(score);
         return ResponseEntity.status(201).build();
     }
-    
+
     @DeleteMapping("delete")
-    public ResponseEntity deleteReservation(@RequestBody Reservation reservation){
-        service.deleteReservation(reservation.getIdReservation());
-        return ResponseEntity.status(201).build();
-    }
+    public ResponseEntity deleteScore(@RequestBody Score score) {
+        service.deleteScore(score);
+        return ResponseEntity.status(204).build();
+    }   
+
 }

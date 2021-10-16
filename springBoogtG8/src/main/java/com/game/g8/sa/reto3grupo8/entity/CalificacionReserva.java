@@ -1,7 +1,9 @@
 package com.game.g8.sa.reto3grupo8.entity;
 
+import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -17,9 +19,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor //Si no quiere no tiene constructor
 @Entity // Spring boot lo reconoce como una entidad
 @Table(name="calificacionReserva")
-public class CalificacionReserva {
+public class CalificacionReserva implements Serializable{
     @Id //clave primaria de la tabla Client
-    @GeneratedValue //Que la id va ser autoIncremental
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //Que la id va ser autoIncremental
      private int idCalificacionReserva;
     private String calificacion;
     private String mensaje;

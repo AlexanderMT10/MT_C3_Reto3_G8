@@ -23,24 +23,24 @@ public class MessageController {
     @Autowired
     private MessageService service;
     
-    @GetMapping("/all")
+    @GetMapping("all")
     public List<Message> findAllMessage(){
         return service.getMessageAll();
     }
     
-    @PostMapping("/save")
+    @PostMapping("save")
     public ResponseEntity addMessage(@RequestBody Message message){
         service.saveMessage(message);
         return ResponseEntity.status(201).build();
     }
     
-    @PutMapping("/update")
+    @PutMapping("update")
     public ResponseEntity updateMessage(@RequestBody Message message){
         service.updateMessage(message);
         return ResponseEntity.status(201).build();
     }
     
-    @DeleteMapping("/dalete")
+    @DeleteMapping("delete")
     public ResponseEntity deleteMessage(@RequestBody Message message){
         service.deleteMessage(message.getIdMessage());
         return ResponseEntity.status(201).build();

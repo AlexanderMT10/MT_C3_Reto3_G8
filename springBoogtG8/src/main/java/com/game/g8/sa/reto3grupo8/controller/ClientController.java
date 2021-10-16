@@ -24,24 +24,24 @@ public class ClientController {
     @Autowired
     private ClientServicio service;
     
-    @GetMapping("/all")
+    @GetMapping("all")
     public List<Client> findAllClient(){
         return service.getClientAll();
     }
     
-    @PostMapping("/save")
+    @PostMapping("save")
     public ResponseEntity addClient(@RequestBody Client client){
         service.saveClient(client);
         return ResponseEntity.status(201).build();
     }
     
-    @PutMapping("/update")
+    @PutMapping("update")
     public ResponseEntity updateClient(@RequestBody Client client){
         service.updateClient(client);
         return ResponseEntity.status(201).build();
     }
     
-    @DeleteMapping("/dalete")
+    @DeleteMapping("delete")
     public ResponseEntity deleteClient(@RequestBody Client client){
         service.deleteClient(client.getIdClient());
         return ResponseEntity.status(201).build();

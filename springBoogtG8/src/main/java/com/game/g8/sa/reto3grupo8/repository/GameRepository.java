@@ -1,6 +1,6 @@
 package com.game.g8.sa.reto3grupo8.repository;
 
-import com.game.g8.sa.reto3grupo8.entity.Games;
+import com.game.g8.sa.reto3grupo8.entity.Game;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
@@ -11,7 +11,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * 
  * Repositorio
  */
-public interface GamesRepository extends JpaRepository<Games,Integer>{
+public interface GameRepository extends JpaRepository<Game,Integer>{
     
     
 }

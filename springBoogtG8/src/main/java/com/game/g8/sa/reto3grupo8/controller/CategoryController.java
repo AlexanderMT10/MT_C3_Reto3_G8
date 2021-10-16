@@ -23,24 +23,24 @@ public class CategoryController {
     @Autowired
     private CategoryService service;
     
-    @GetMapping("/all")
+    @GetMapping("all")
     public List<Category> findAllCategory(){
         return service.getCategoryAll();
     }
     
-    @PostMapping("/save")
+    @PostMapping("save")
     public ResponseEntity addCategory(@RequestBody Category category){
         service.saveCategory(category);
         return ResponseEntity.status(201).build();
     } 
     
-    @PutMapping("/update")
+    @PutMapping("update")
     public ResponseEntity updateCategory(@RequestBody Category category){
         service.updateCategory(category);
         return ResponseEntity.status(201).build();
     }
     
-    @DeleteMapping("/dalete")
+    @DeleteMapping("delete")
     public ResponseEntity deleteCategory(@RequestBody Category category){
         service.deleteCategory(category.getId());
         return ResponseEntity.status(201).build();

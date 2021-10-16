@@ -16,14 +16,14 @@ public class ReservationService {
     private ReservationRepository repository;
     
     /**C
-     * Guardar producto
+     * Guardar reservacion
      */
     public Reservation saveReservation(Reservation reservation){
         return repository.save(reservation);
     }
     
     /**R
-     * mostrar todos los productos
+     * mostrar todos las reservaciones
      */
     public List<Reservation> getReservationAll(){
         return repository.findAll();
@@ -36,7 +36,6 @@ public class ReservationService {
         Reservation existeReservation = repository.findById(reservation.getIdReservation()).orElse(null);
         existeReservation.setStartDate(reservation.getStartDate());
         existeReservation.setDevolutionDate(reservation.getDevolutionDate());
-        existeReservation.setStatus(reservation.getStatus());
         return repository.save(existeReservation);
     }
     
