@@ -29,6 +29,10 @@ public class MessageService {
         return repository.findAll();
     }
     
+    public Message getMessageById(int id){
+        return repository.findById(id).orElse(null);
+    }
+    
     /**U
      * Actualizar message por ID
      */
@@ -41,9 +45,11 @@ public class MessageService {
     /**c
      * Eliminar mensaje por ID
      */
-    public String deleteMessage(int idMessage){
-        repository.deleteById(idMessage);
-        return "Producto removido" +idMessage;
+//    public String deleteMessage(int idMessage){
+//        repository.deleteById(idMessage);
+//        return "Producto removido" +idMessage;
+//    }
+    public void deleteMessage(int id){
+        repository.deleteById(id);
     }
-    
 }

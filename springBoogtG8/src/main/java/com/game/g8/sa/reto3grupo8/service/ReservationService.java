@@ -29,6 +29,10 @@ public class ReservationService {
         return repository.findAll();
     }
     
+    public Reservation getReservationById(int id){
+        return repository.findById(id).orElse(null);
+    }
+    
     /**U
      * Actualizar client por ID
      */
@@ -42,8 +46,11 @@ public class ReservationService {
     /**c
      * Eliminar producto por ID
      */
-    public String deleteReservation(int idReservation){
-        repository.deleteById(idReservation);
-        return "Producto removido" +idReservation;
+//    public String deleteReservation(int idReservation){
+//        repository.deleteById(idReservation);
+//        return "Producto removido" +idReservation;
+//    }
+    public void deleteReservation(int id){
+        repository.deleteById(id);
     }
 }

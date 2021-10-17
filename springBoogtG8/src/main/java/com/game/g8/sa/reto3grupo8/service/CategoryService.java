@@ -29,6 +29,10 @@ public class CategoryService {
         return repository.findAll();
     }
     
+    public Category getCategoryById(int id){
+        return repository.findById(id).orElse(null);
+    }
+    
     /**U
      * Actualizar category por ID
      */
@@ -42,8 +46,11 @@ public class CategoryService {
     /**c
      * Eliminar Category por ID
      */
-    public String deleteCategory(int id){
+//    public String deleteCategory(int id){
+//        repository.deleteById(id);
+//        return "Producto removido" +id;
+//    }
+    public void deleteCategory(int id){
         repository.deleteById(id);
-        return "Producto removido" +id;
     }
 }

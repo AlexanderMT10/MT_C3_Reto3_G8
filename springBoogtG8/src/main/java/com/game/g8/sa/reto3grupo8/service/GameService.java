@@ -29,14 +29,18 @@ public class GameService {
         return repository.findAll();
     }
     
+    public Game getGameById(int id){
+        return repository.findById(id).orElse(null);
+    }
+    
     /**U
      * Actualizar games por ID
      */
     public Game updateGame(Game game){
         Game existeGame = repository.findById(game.getId()).orElse(null);
+        existeGame.setName(game.getName());
         existeGame.setDeveloper(game.getDeveloper());
         existeGame.setYear(game.getYear());
-        existeGame.setName(game.getName());
         existeGame.setDescription(game.getDescription());
         return repository.save(existeGame);
     }
@@ -44,8 +48,11 @@ public class GameService {
     /**c
      * Eliminar games por ID
      */
-    public String deleteGame(int id){
+//    public String deleteGame(int id){
+//        repository.deleteById(id);
+//        return "Producto removido" +id;
+//    }
+    public void deleteGame(int id){
         repository.deleteById(id);
-        return "Producto removido" +id;
     }
 }
