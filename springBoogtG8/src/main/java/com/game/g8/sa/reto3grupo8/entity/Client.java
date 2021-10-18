@@ -29,9 +29,9 @@ public class Client implements Serializable{
     @Id //clave primaria de la tabla Client
     @GeneratedValue(strategy = GenerationType.IDENTITY) //Que la id va ser autoIncremental
     private int idClient;
-    private String name;
     private String email;
     private String password;
+    private String name;
     private int age;
     
     @OneToMany(cascade =CascadeType.PERSIST, mappedBy="client")
