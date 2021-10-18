@@ -27,7 +27,7 @@ public class CategoryController {
     @Autowired
     private CategoryService service;
     
-    @GetMapping("all")
+    @GetMapping("/all")
     public List<Category> findAllCategory(){
         return service.getCategoryAll();
     }
@@ -37,13 +37,13 @@ public class CategoryController {
         return service.getCategoryById(id);
     }
     
-    @PostMapping("save")
+    @PostMapping("/save")
     public ResponseEntity addCategory(@RequestBody Category category){
         service.saveCategory(category);
         return ResponseEntity.status(201).build();
     } 
     
-    @PutMapping("update")
+    @PutMapping("/update")
     public ResponseEntity updateCategory(@RequestBody Category category){
         service.updateCategory(category);
         return ResponseEntity.status(201).build();
