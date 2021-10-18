@@ -31,7 +31,7 @@ public class Reservation implements Serializable{
     private int idReservation;
     private Calendar startDate;
     private Calendar devolutionDate;
-    private String status="Created";
+    private String status="created";
     
     @ManyToOne
     @JoinColumn(name = "game_id")
