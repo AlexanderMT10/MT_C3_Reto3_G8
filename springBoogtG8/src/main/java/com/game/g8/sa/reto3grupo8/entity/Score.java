@@ -25,7 +25,7 @@ public class Score implements Serializable{
     @Id //clave primaria de la tabla Client
     @GeneratedValue(strategy = GenerationType.IDENTITY) //Que la id va ser autoIncremental
     private int id;
-    private String calification;
+    private int calification;
     private String message;
 
     @OneToOne
